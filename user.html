@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Jayphix</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Cabinet Grotesk', 'Segoe UI', sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 5%;
+            border-bottom: 1px solid #1a1a1a;
+            background-color: #0a0a0a;
+        }
+
+        .brand-logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .brand-logo span {
+            color: #c5a880;
+        }
+
+        .logout-btn {
+            padding: 10px 20px;
+            background-color: transparent;
+            border: 1px solid #c5a880;
+            color: #c5a880;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .logout-btn:hover {
+            background-color: #c5a880;
+            color: #0a0a0a;
+        }
+
+        /* Main Dashboard Layout */
+        main {
+            flex: 1;
+            padding: 40px 5%;
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Welcome Header */
+        .welcome-header {
+            margin-bottom: 40px;
+        }
+
+        .welcome-header h1 {
+            font-size: 32px;
+            font-weight: 500;
+            margin-bottom: 8px;
+        }
+
+        .welcome-header h1 span {
+            color: #c5a880;
+        }
+
+        .welcome-header p {
+            color: #666666;
+            font-size: 15px;
+        }
+
+        /* Dashboard Grid Layout */
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        /* Card Component */
+        .card {
+            background-color: #111111;
+            border: 1px solid #1a1a1a;
+            padding: 30px;
+            border-radius: 4px;
+        }
+
+        .card h2 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #888888;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #1a1a1a;
+            padding-bottom: 10px;
+        }
+
+        /* Project List Item Styles */
+        .project-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #161616;
+        }
+
+        .project-item:last-child {
+            border-bottom: none;
+        }
+
+        .project-info h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+
+        .project-info p {
+            font-size: 13px;
+            color: #555555;
+        }
+
+        /* Status Badges */
+        .status {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .status.active {
+            background-color: rgba(197, 168, 128, 0.1);
+            color: #c5a880;
+            border: 1px solid rgba(197, 168, 128, 0.2);
+        }
+
+        .status.completed {
+            background-color: rgba(40, 167, 69, 0.1);
+            color: #28a745;
+            border: 1px solid rgba(40, 167, 69, 0.2);
+        }
+
+        /* Profile/Account details details */
+        .profile-detail {
+            margin-bottom: 15px;
+        }
+
+        .profile-detail span {
+            display: block;
+            font-size: 12px;
+            color: #555555;
+            margin-bottom: 2px;
+        }
+
+        .profile-detail p {
+            font-size: 15px;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="brand-logo">Jayphix<span>.</span></a>
+        <a href="loginpage.html" class="logout-btn" id="logoutLink">Sign Out</a>
+    </nav>
+
+    <main>
+        <div class="welcome-header">
+            <h1 id="welcomeMessage">Welcome back, <span>Alex</span></h1>
+            <p>Here is the status of your active creative projects and brand assets.</p>
+        </div>
+
+        <div class="dashboard-grid">
+            <div class="card">
+                <h2>Active Projects</h2>
+                
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Grand Bassam Beach Flyer</h3>
+                        <p>Graphic Design Suite</p>
+                    </div>
+                    <span class="status active">In Progress</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Jayphix Corporate Identity</h3>
+                        <p>Brand Guidelines Booklet</p>
+                    </div>
+                    <span class="status completed">Delivered</span>
+                </div>
+
+                <div class="project-item">
+                    <div class="project-info">
+                        <h3>Portfolio Web Platform</h3>
+                        <p>Frontend Development</p>
+                    </div>
+                    <span class="status active">Reviewing</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Profile Overview</h2>
+                
+                <div class="profile-detail">
+                    <span>Account Tier</span>
+                    <p>Premium Client</p>
+                </div>
+
+                <div class="profile-detail">
+                    <span>Registered Email</span>
+                    <p id="userEmail">alex@example.com</p>
+                </div>
+
+                <div class="profile-detail">
+                    <span>Account Status</span>
+                    <p style="color: #28a745;">Verified</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Simple client-side simulation logic
+        document.getElementById('logoutLink').addEventListener('click', function(e) {
+            // If you use localStorage later, clear it here
+            alert("Logging out securely...");
+        });
+    </script>
+
+</body>
+</html>
